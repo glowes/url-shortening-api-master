@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/glowes/url-shortening-api-master/static/css/main.88a79437.css",
-    "main.js": "/glowes/url-shortening-api-master/static/js/main.9d67bd86.js",
-    "index.html": "/glowes/url-shortening-api-master/index.html",
-    "static/media/bg-shorten-desktop.svg": "/glowes/url-shortening-api-master/static/media/bg-shorten-desktop.0d9742f433f4b0d8752b.svg",
-    "main.88a79437.css.map": "/glowes/url-shortening-api-master/static/css/main.88a79437.css.map",
-    "main.9d67bd86.js.map": "/glowes/url-shortening-api-master/static/js/main.9d67bd86.js.map"
+    "main.css": "/url-shortening-api-master/static/css/main.c1f752c6.css",
+    "main.js": "/url-shortening-api-master/static/js/main.99289d9f.js",
+    "index.html": "/url-shortening-api-master/index.html",
+    "static/media/bg-shorten-desktop.svg": "/url-shortening-api-master/static/media/bg-shorten-desktop.0d9742f433f4b0d8752b.svg",
+    "main.c1f752c6.css.map": "/url-shortening-api-master/static/css/main.c1f752c6.css.map",
+    "main.99289d9f.js.map": "/url-shortening-api-master/static/js/main.99289d9f.js.map"
   },
   "entrypoints": [
-    "static/css/main.88a79437.css",
-    "static/js/main.9d67bd86.js"
+    "static/css/main.c1f752c6.css",
+    "static/js/main.99289d9f.js"
   ]
 }
