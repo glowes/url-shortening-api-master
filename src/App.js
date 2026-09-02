@@ -187,26 +187,33 @@ function Search() {
       formattedUrl = `https://${formattedUrl}`;
     }
 
-    const res = await fetch(
-      "https://corsproxy.io/?https://cleanuri.com//api/v1/shorten",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          url: formattedUrl,
-        }),
+    //this doesnt work on github pages as cors requires API key and github also block these api calls
+    /*const targetApi = encodeURIComponent("https://cleanuri.com/api/v1/shorten");
+    const res = await fetch(`https://corsproxy.io/?${targetApi}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-    );
+      body: new URLSearchParams({
+        url: formattedUrl,
+      }),
+    });
+*/
 
-    const resData = await res.json();
-    if (!res.ok || resData.error) {
-      alert(resData.error);
-      throw new Error(resData.error || "Failed to shorten the link");
+    //using TinyURL
+    const res = await fetch(
+      `https://tinyurl.com/api-create.php?url=${encodeURIComponent(formattedUrl)}`,
+    );
+    //const resData = await res.json();
+    if (!res.ok) {
+      // alert(resData.error);
+      alert("Error shortening the link");
+      throw new Error("Failed to shorten the link");
     }
 
-    return resData.result_url;
+    //return resData.result_url;
+    const shortenedUrl = await res.text();
+    return shortenedUrl;
   }
 
   return (
@@ -329,11 +336,7 @@ function InfoCardSection() {
 function Card({ icon, title, body }) {
   return (
     <div className="Card">
-      <img
-        className="cardIcon"
-        src={process.env.PUBLIC_URL + icon}
-        alt="icon element"
-      />
+      <img className="cardIcon" src={icon} alt="icon element" />
       {console.log(icon)}
       <h3>{title}</h3>
       <p>{body}</p>
