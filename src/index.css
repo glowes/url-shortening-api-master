@@ -1,13 +1,641 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+:root {
+  --color-primary1: hsl(180, 66%, 49%);
+  --color-primary-hover: hsl(180, 66%, 70%);
+  --color-primary2: hsl(257, 27%, 26%);
+  --color-alert: hsl(0, 87%, 67%);
+  --color-bg-silver: #eff1f5;
+  --color-text-silver: hsl(0, 0%, 75%);
+  --color-text-silver2: hsl(257, 7%, 63%);
+  --color-text-silver3: hsl(255, 11%, 22%);
+  --color-text-silver4: hsl(260, 8%, 14%);
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* 
+************* header *************
+*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 200px;
+  padding: 20px 0px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.header .main_links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.header ul li:nth-child(1) {
+  margin-right: 50px;
+}
+
+ul li {
+  margin: 10px;
+  cursor: pointer;
+  color: silver;
+  align-self: center;
+}
+
+header ul li:hover {
+  color: black;
+}
+
+.header_btn {
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 100px;
+  background-color: var(--color-primary1);
+  color: white;
+  cursor: pointer;
+}
+
+.loginSignUp_links {
+  display: flex;
+}
+
+.logo {
+  align-self: center;
+}
+/*
+* Hero section:
+*/
+.HeroSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  padding-bottom: 80px;
+  margin: 0px 200px;
+}
+
+.hamburguerMenu_btn {
+  align-self: center;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburguerMenu_btn .bar {
+  width: 100%;
+  height: 5px;
+  background-color: #9e9aa7;
+  border-radius: 2px;
+}
+
+.HeroTextdiv {
+  text-align: start;
+}
+/*
+.HeroTextdiv div {
+  background-color: blue;
+}*/
+
+/*.HeroImgContainer img {
+}
+.HeroTextdiv {
+}*/
+
+.HeroTextdiv div h1 {
+  font-size: 4.5rem;
+  line-height: 110%;
+  color: var(--color-text-silver4);
+}
+
+.HeroTextdiv div h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text-silver2);
+  margin-top: -5%;
+}
+
+/*
+mainContainer
+*/
+.mainContainer {
+  background-color: var(--color-bg-silver);
+  padding-top: 1px;
+  /*position: relative;*/
+}
+
+/*
+*SearchArea
+*/ /*
+.searchPosition {
+  position: absolute;
+  width: 100%;
+  top: -50px;
+}*/
+
+.searchSectionContainer {
+  margin-top: -50px;
+}
+.searchAreaContainer {
+  background-color: var(--color-primary2);
+  background-image: url("../public/images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  margin: 0 200px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchAreaContainer p {
+  margin: 0px 130px;
+  padding: 10px 0px;
+  text-align: left;
+  color: var(--color-alert);
+}
+
+.SearchArea {
+  padding: 20px 0px 0px 0px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.SearchArea input {
+  height: 50px;
+  border-radius: 5px;
+  width: 70%;
+  padding: 0px 20px;
+}
+
+.noInputValue {
+  color: var(--color-alert);
+  border-color: var(--color-alert);
+}
+
+/*shorted link blocks */
+.shorted_link_container {
+  padding: 10px 0 !important;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.link_block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.link_block span {
+  color: var(--color-text-silver3);
+}
+
+.sLinkBtn_block span {
+  color: var(--color-primary1);
+}
+
+.sLinkBtn_block {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+}
+
+/*Info section*/
+.CardSection {
+  position: relative;
+  padding: 20px 0px;
+}
+
+.CardsContainer {
+  display: flex;
+  gap: 50px;
+  padding: 50px 0;
+  margin-bottom: 1%;
+}
+
+/*codigo para gerar a linha ----> usando o before */
+.CardsContainer::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  bottom: auto;
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-primary1);
+}
+
+.Card {
+  padding: 20px;
+  background-color: white;
+  padding: 70px;
+  position: relative;
+  text-align: start;
+  border-radius: 5px;
+}
+
+.Card:nth-child(1) {
+  top: 0;
+}
+
+.Card:nth-child(2) {
+  top: 50px;
+}
+.Card:nth-child(3) {
+  top: 85px;
+}
+
+.Card img {
+  background-color: var(--color-text-silver4);
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: -50px;
+}
+/*
+.Card:nth-child(1) {
+  align-self: flex-start;
+}
+
+.Card:nth-child(2) {
+  align-self: baseline;
+}
+
+.Card:nth-last-child(3) {
+  align-self: flex-end;
+}*/
+
+.lastCallSection {
+  color: white;
+  background-image: url("../public/images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  background-color: var(--color-primary2);
+  padding: 70px;
+}
+
+footer {
+  background-color: var(--color-text-silver4);
+}
+
+footer ul li:hover {
+  color: var(--color-primary1);
+}
+
+.footer_container {
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 200px;
+  padding: 100px 0;
+  align-items: center;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+footer .socials {
+  display: flex;
+}
+
+footer .footerLinks li:nth-child(1) {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.svg_footer {
+  filter: brightness(0) invert(1);
+}
+
+/***
+RESPONSIVE CODE
+***/
+
+/*1585px 
+--> quebra dos textos do Hero, diminuir tamanho e ver se é possivel realizar outras alterações.
+--> diminuir o tamanho da imagem e o gap entre imagem e o texto.
+--> tambem melhorar os textos nos Cards de info
+*/
+
+@media (max-width: 1585px) {
+  .HeroImgContainer img {
+    width: 100%;
+  }
+
+  .HeroTextdiv div h1 {
+    font-size: 4rem;
+  }
+
+  .HeroTextdiv div h3 {
+    font-size: 1rem;
+  }
+}
+
+/* 1470px :
+*     --> trabalhar os textos dos cards (tentar diminuir)
+*/
+@media (max-width: 1470px) {
+  .Card {
+    font-size: 0.9rem;
+  }
+}
+
+/*1272:
+*     ---> aqui transformar a orientação do container dos cards para column
+      ---> diminuir o tamanho do titulo do hero 
+*/
+
+@media (max-width: 1272px) {
+  .HeroTextdiv div h1 {
+    font-size: 3.5rem;
+  }
+
+  .CardsContainer {
+    flex-direction: column;
+  }
+
+  /*codigo para gerar a linha ----> usando o before */
+  .CardsContainer::before {
+    left: 0;
+    top: 10%;
+    left: 50%;
+    width: 10px;
+    height: 90%;
+  }
+
+  .Card img {
+    position: absolute;
+    left: 45%;
+    top: -50px;
+  }
+}
+
+/* 1070 px
+      ---> Hero:
+          ----> flex-direction column e reverter a direção de modo a que a imagem apareça primeiro
+
+      ---> footer :
+*
+*/
+
+@media (max-width: 1070px) {
+  .HeroSection {
+    flex-direction: column-reverse;
+  }
+
+  .SearchArea {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .SearchArea input {
+    width: auto;
+  }
+
+  .CardsContainer::before {
+    left: 51.5%;
+  }
+
+  .sLinkBtn_block span,
+  .link_block span {
+    font-size: 0.8rem;
+  }
+
+  .footer_container {
+    flex-direction: column;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+  }
+
+  .footer_container {
+    justify-content: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+}
+
+/*944px
+
+  --> reduzir tamanho das letras caso for preciso
+  --> diminuir a margem geral dos container , de 200px para 50px
+*/
+
+@media (max-width: 944px) {
+  /*.blocks {
+    margin: 10px 0px;
+    width: 100%;
+    background-color: red;
+  }*/
+
+  .header {
+    margin: 0;
+  }
+
+  /*
+  .mainContainer {
+    background-color: red;
+  }
+*/
+  .blocks {
+    margin: 10px 0 !important;
+    padding: 20px !important;
+    text-align: center;
+  }
+
+  .searchSectionContainer {
+    padding: 20px;
+  }
+
+  .searchSectionContainer div {
+    margin: 0 0px;
+  }
+
+  .InfoSection {
+    width: 100%;
+    margin-bottom: 100px !important;
+    /*padding: 0 20px !important;
+  */
+  }
+
+  .CardsContainer::before {
+    left: 48.7%;
+  }
+}
+
+/*
+794px --> adicionar o hamburger menu
+
+    ---> mudança de block dos links 
+    ---> mudanças de alguns textos
+
+
+*/
+
+@media (max-width: 794px) {
+  /*hamburguer button*/
+  .hamburguerMenu_btn {
+    display: flex;
+  }
+
+  .loginSignUp_links {
+    display: none;
+  }
+
+  .main_links {
+    display: none !important;
+  }
+
+  .CardsContainer::before {
+    left: 50%;
+  }
+}
+
+@media (max-width: 620px) {
+  .HeroSection {
+    margin: 0;
+  }
+
+  .HeroImgContainer {
+    width: 300px;
+  }
+
+  .HeroTextdiv div h1,
+  .HeroTextdiv div h3 {
+    font-size: 2rem;
+    padding: 20px;
+  }
+
+  .HeroTextdiv div h3 {
+    font-size: 1.5rem;
+  }
+
+  .searchAreaContainer p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .link_block {
+    flex-direction: column;
+  }
+  .link_block span {
+    font-size: 0.9rem;
+  }
+
+  .btn_copied,
+  .gnr_btn {
+    padding: 10px 20px !important;
+  }
+
+  .Card {
+    font-size: 1.5rem;
+  }
+
+  .HeroTextdiv div .gnr_btn {
+    margin: 0 25%;
+    width: 200px;
+    padding: 20px 50px !important;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .CardsContainer::before {
+    left: 56%;
+  }
+}
+
+/* .Card { } */
+
+/*EXTRa*/
+.blocks {
+  margin: 10px 200px;
+  padding: 100px 0;
+}
+
+/*EXTRAS*/
+
+.gnr_btn {
+  background-color: var(--color-primary1);
+  color: white;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn_copied {
+  background-color: var(--color-text-silver4);
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+/*
+.HeroSection,
+.header {
+  background-color:;
+}*/
+
+ul li {
+  list-style: none;
 }
