@@ -187,15 +187,18 @@ function Search() {
       formattedUrl = `https://${formattedUrl}`;
     }
 
-    const res = await fetch("/api/v1/shorten", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+    const res = await fetch(
+      "https://corsproxy.io/?https://cleanuri.com//api/v1/shorten",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          url: formattedUrl,
+        }),
       },
-      body: new URLSearchParams({
-        url: formattedUrl,
-      }),
-    });
+    );
 
     const resData = await res.json();
     if (!res.ok || resData.error) {
