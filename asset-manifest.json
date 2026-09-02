@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/glowes/url-shortening-api-master/static/css/main.88a79437.css",
-    "main.js": "/glowes/url-shortening-api-master/static/js/main.1257b162.js",
+    "main.js": "/glowes/url-shortening-api-master/static/js/main.9d67bd86.js",
     "index.html": "/glowes/url-shortening-api-master/index.html",
     "static/media/bg-shorten-desktop.svg": "/glowes/url-shortening-api-master/static/media/bg-shorten-desktop.0d9742f433f4b0d8752b.svg",
     "main.88a79437.css.map": "/glowes/url-shortening-api-master/static/css/main.88a79437.css.map",
-    "main.1257b162.js.map": "/glowes/url-shortening-api-master/static/js/main.1257b162.js.map"
+    "main.9d67bd86.js.map": "/glowes/url-shortening-api-master/static/js/main.9d67bd86.js.map"
   },
   "entrypoints": [
     "static/css/main.88a79437.css",
-    "static/js/main.1257b162.js"
+    "static/js/main.9d67bd86.js"
   ]
 }
